@@ -29,7 +29,24 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 /*=============== SHADOW HEADER ===============*/
+const shadowHeader = () =>{
+    const header = document.getElementById('header')
+    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+    this.scrollY >= 50 ? header.classList.add('shadow-header') 
+                       : header.classList.remove('shadow-header')
+}
+window.addEventListener('scroll', shadowHeader)
 
+/*=============== TESTIMONIAL SWIPER ===============*/
+let testimonialSwiper = new Swiper(".testimonial-swiper", {
+    spaceBetween: 30,
+    loop: 'true',
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 
 /*=============== EMAIL JS ===============*/
 
