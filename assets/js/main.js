@@ -38,18 +38,42 @@ const shadowHeader = () =>{
 window.addEventListener('scroll', shadowHeader)
 
 /*=============== TESTIMONIAL SWIPER ===============*/
-let testimonialSwiper = new Swiper(".testimonial-swiper", {
-    spaceBetween: 30,
-    loop: 'true',
+// let testimonialSwiper = new Swiper(".testimonial-swiper", {
+//     spaceBetween: 30,
+//     loop: 'true',
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     },
+// });
 
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message')
 
+const sendEmail = (e) =>{
+    e.preventDefault()
+    //serviceID - templateID - #form - publicKey
+    emailjs.sendForm('service_246n3wq', 'template_5mf1cyc', '#contact-form', 'HQitnYKm15tPuFiCm')
+    .then(() =>{
+        //Show send message
+        contactMessage.textContent = 'Message sent successfully ✅'
+
+        //Remove message after 5 second
+        setTimeout(() =>{
+            contactMessage.textContent = ''
+        }, 5000)
+        
+        //Clear input fields
+        contactForm.reset()
+    }, () =>{
+        //Show error message
+        contactMessage.textContent = 'Message not send (Service Error) ❌'
+    })
+}
+
+contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
