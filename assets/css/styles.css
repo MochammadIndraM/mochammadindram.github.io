@@ -952,9 +952,44 @@ place-items: center;
   background-color: var(--first-color);
 }
 
+.contact__message{
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0;
+}
 /*=============== FOOTER ===============*/
+.footer{
+  background-color: var(--black-color);
+}
 
+.footer__container{
+  padding-block: 3rem;
+  row-gap: 2.5rem;
+}
 
+.footer__links{
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.footer__link{
+  color: var(--white-color);
+  transition: color .4s;
+}
+
+.footer__link:hover{
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+
+.footer__copy a{
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+}
 /*=============== SCROLL BAR ===============*/
 
 
